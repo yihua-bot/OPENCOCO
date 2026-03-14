@@ -4,15 +4,15 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: medeo
-      POSTGRES_PASSWORD: medeo
-      POSTGRES_DB: medeo
+      POSTGRES_USER: coco
+      POSTGRES_PASSWORD: coco
+      POSTGRES_DB: coco
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U medeo"]
+      test: ["CMD-SHELL", "pg_isready -U coco"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -32,7 +32,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: postgresql://medeo:medeo@postgres:5432/medeo
+      DATABASE_URL: postgresql://coco:coco@postgres:5432/coco
       REDIS_URL: redis://redis:6379/0
       SECRET_KEY: ${SECRET_KEY:-dev-secret-key-change-in-prod}
     depends_on:

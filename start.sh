@@ -1,7 +1,7 @@
 #!/bin/bash
 # Quick start script for local development
 
-echo "🎬 Starting Medeo Clone..."
+echo "Starting Coco..."
 
 # Start postgres + redis
 echo "Starting database and cache..."
@@ -9,7 +9,7 @@ docker-compose up -d postgres redis
 
 # Wait for postgres
 echo "Waiting for PostgreSQL..."
-until docker-compose exec -T postgres pg_isready -U medeo > /dev/null 2>&1; do
+until docker-compose exec -T postgres pg_isready -U coco > /dev/null 2>&1; do
   sleep 1
 done
 echo "PostgreSQL ready!"
