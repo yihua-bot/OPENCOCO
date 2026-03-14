@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0c0a08;
+  --foreground: #f5f0eb;
+  --card: #141210;
+  --card-border: #2a2218;
+  --muted: #9a8f80;
+  --accent: #ea6c1a;
+  --accent-hover: #d45e10;
+  --accent-glow: rgba(234, 108, 26, 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a3e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a5e;
+}
+
+/* Allotment sash (divider) styling */
+.split-view-view-visible > .sash-container > .sash {
+  background: transparent !important;
+}
+.split-view-view-visible > .sash-container > .sash::before {
+  background: #2a2218 !important;
+  transition: background 0.15s;
+}
+.split-view-view-visible > .sash-container > .sash:hover::before,
+.split-view-view-visible > .sash-container > .sash.active::before {
+  background: #ea6c1a !important;
+}
