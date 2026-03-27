@@ -13,16 +13,15 @@ OPENCOCO is the open-source edition of CoCo: an AI-assisted video editing worksp
 
 ### What It Is
 
-OPENCOCO is the open-source edition of CoCo, an AI video creation and editing workspace built with FastAPI, Next.js, and Electron. It is an open AI video generation platform that can flexibly connect to almost any model stack and combine fragmented generated content into coherent long-form videos.
+OPENCOCO is the open-source edition of CoCo, an AI video creation and editing workspace built with FastAPI, Next.js, and Electron. As an open AI video generation platform, it can flexibly integrate with almost any model stack and turn fragmented generated content into coherent long-form videos.
 
 ### Core Features
 
-- Flexible model configuration: customize script models, image storyboard models, and video generation models
-- Support version history, custom prompts, creation logs, and project memory
-- Generate film-length videos from simple descriptions as long as you have enough tokens
+- Flexible model configuration: define your own script, storyboard image, and video generation models
+- Traceable creation workflow: built-in version history, custom prompts, creation logs, and project memory
+- Long-form generation: turn a simple description into film-length video outputs when you have sufficient tokens
 - Unified editing workspace: manage preview, assets, script, music, timeline, and export in one interface
 - AI-assisted iteration: continuously refine rhythm, style, structure, and expression through natural-language instructions
-- Official product page: learn more about the commercial product direction and positioning at [openyc.vip/products/coco](https://openyc.vip/products/coco)
 
 ### Official Website & Contact
 
@@ -112,16 +111,15 @@ cd frontend && npm run dev
 
 ### 产品介绍
 
-OPENCOCO 是 CoCo 的开源版本，一个基于 FastAPI、Next.js 和 Electron 构建的 AI 视频创作与编辑工作台。他是一个开放式的AI生成视频的平台，可以灵活的几乎所有模型，可以把碎片化的生成内容组合成连贯的长视频。
+OPENCOCO 是 CoCo 的开源版本，一个基于 FastAPI、Next.js 和 Electron 构建的 AI 视频创作与编辑工作台。它是一个开放式的 AI 视频生成平台，能够灵活接入几乎所有模型，并将碎片化的生成内容组织成连贯的长视频。
 
 ### 核心特点
 
-- 灵活配置模型：你可以自定义脚本模型、图片分镜模型、视频模型
-- 支持版本回溯、自定义提示词、创作日志、项目记忆
-- 简单描述就可以生成电影时长的视频，只要你有足够多的token
+- 灵活配置模型：支持自定义脚本模型、图片分镜模型和视频模型
+- 创作过程可追溯：支持版本回溯、自定义提示词、创作日志和项目记忆
+- 长视频生成能力：只需简单描述，在 token 充足的情况下即可生成电影时长的视频
 - 一体化工作台：把预览、素材、脚本、音乐、时间线和导出整合到同一个界面
-- AI 辅助迭代：可通过自然语言持续修改节奏、风格、结构和表达方式
-- 产品官网：可在 [openyc.vip/products/coco](https://openyc.vip/products/coco) 查看产品定位与更多介绍
+- AI 辅助迭代：可通过自然语言持续调整节奏、风格、结构和表达方式
 
 ### 官网与联系
 
