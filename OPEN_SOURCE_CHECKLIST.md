@@ -24,8 +24,6 @@ These files and directories are local-only and should not be committed:
 - `node_modules/` in any subproject
 - `.DS_Store`
 
-Also remove accidental junk files before publishing. In this repo, the `electron/` directory currently contains suspicious files with shell-output-looking names that should be reviewed and deleted if they are not intentionally needed.
-
 ## Keep in Git
 
 These are good candidates to keep public:

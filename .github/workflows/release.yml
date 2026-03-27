@@ -1,0 +1,275 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release-macos-arm64:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build Backend (arm64)
+        run: |
+          cd backend
+          source .venv/bin/activate
+          pyinstaller coco_backend.spec \
+            --distpath ../electron/resources/ \
+            --workpath /tmp/pyinstaller \
+            --noconfirm
+
+      - name: Copy Node Binary
+        run: |
+          mkdir -p electron/resources/node
+          cp $(which node) electron/resources/node/
+
+      - name: Install Electron Dependencies
+        run: |
+          cd electron
+          npm install
+
+      - name: Build and Publish (arm64)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npm_config_arch: arm64
+          npm_config_target_arch: arm64
+        run: |
+          cd electron
+          npm run build
+          npx electron-builder build --mac --arm64 --publish always \
+            -c.publish.provider=github \
+            -c.publish.owner=${{ github.repository_owner }} \
+            -c.publish.repo=${{ github.event.repository.name }}
+
+  release-macos-x64:
+    runs-on: macos-13
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build Backend (x64)
+        run: |
+          cd backend
+          source .venv/bin/activate
+          pyinstaller coco_backend.spec \
+            --distpath ../electron/resources/ \
+            --workpath /tmp/pyinstaller \
+            --noconfirm
+
+      - name: Copy Node Binary
+        run: |
+          mkdir -p electron/resources/node
+          cp $(which node) electron/resources/node/
+
+      - name: Install Electron Dependencies
+        run: |
+          cd electron
+          npm install
+
+      - name: Build and Publish (x64)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npm_config_arch: x64
+          npm_config_target_arch: x64
+        run: |
+          cd electron
+          npm run build
+          npx electron-builder build --mac --x64 --publish always \
+            -c.publish.provider=github \
+            -c.publish.owner=${{ github.repository_owner }} \
+            -c.publish.repo=${{ github.event.repository.name }}
+
+  release-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          python -m venv .venv
+          .venv\Scripts\activate
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build Backend
+        run: |
+          cd backend
+          .venv\Scripts\activate
+          pyinstaller coco_backend.spec `
+            --distpath ..\electron\resources\ `
+            --workpath $env:TEMP\pyinstaller `
+            --noconfirm
+
+      - name: Copy Node Binary
+        run: |
+          New-Item -ItemType Directory -Force -Path electron\resources\node
+          Copy-Item (Get-Command node).Source electron\resources\node\
+
+      - name: Install Electron Dependencies
+        run: |
+          cd electron
+          npm install
+
+      - name: Build and Publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd electron
+          npm run build
+          npx electron-builder build --win --publish always `
+            -c.publish.provider=github `
+            -c.publish.owner=${{ github.repository_owner }} `
+            -c.publish.repo=${{ github.event.repository.name }}
+
+  release-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-dev python3-pip
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          python3 -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build Backend
+        run: |
+          cd backend
+          source .venv/bin/activate
+          pyinstaller coco_backend.spec \
+            --distpath ../electron/resources/ \
+            --workpath /tmp/pyinstaller \
+            --noconfirm
+
+      - name: Copy Node Binary
+        run: |
+          mkdir -p electron/resources/node
+          cp $(which node) electron/resources/node/
+
+      - name: Install Electron Dependencies
+        run: |
+          cd electron
+          npm install
+
+      - name: Build and Publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd electron
+          npm run build
+          npx electron-builder build --linux --publish always \
+            -c.publish.provider=github \
+            -c.publish.owner=${{ github.repository_owner }} \
+            -c.publish.repo=${{ github.event.repository.name }}
