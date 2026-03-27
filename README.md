@@ -7,9 +7,6 @@ OPENCOCO is the open-source edition of CoCo: an AI-assisted video editing worksp
 - `backend/`: FastAPI API, auth, project storage, memberships, generation workflows
 - `frontend/`: Next.js app UI
 - `electron/`: desktop shell, bundling, auto-update integration
-- `cloudflare-service/`: optional email-code auth service for Cloudflare Workers
-- `cloud-service/`: optional lightweight cloud auth service
-- `license-server/`: optional licensing helper scripts and worker
 
 ## Downloads
 
@@ -65,13 +62,7 @@ cd backend && .venv/bin/uvicorn main:app --reload
 cd frontend && npm run dev
 ```
 
-## Open Source Notes
 
-- Review [OPEN_SOURCE_CHECKLIST.md](OPEN_SOURCE_CHECKLIST.md) before the first public push.
-- `cloud-service/`, `cloudflare-service/`, and `license-server/` are optional. If you do not want to publish those parts, split them into private repositories before pushing to GitHub.
-- Electron auto-update is disabled by default unless `GITHUB_RELEASE_OWNER` and `GITHUB_RELEASE_REPO` are configured in the runtime environment.
-- Cloud auth is optional. If `CLOUD_AUTH_URL` or `NEXT_PUBLIC_CLOUD_AUTH_URL` is unset, the app falls back to local behavior.
-- Maintainer-facing GitHub setup and first-release notes live in [docs/GITHUB_SETUP.md](docs/GITHUB_SETUP.md).
 
 ## Environment Files
 
