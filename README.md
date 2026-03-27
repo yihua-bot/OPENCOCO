@@ -27,6 +27,10 @@ OPENCOCO is the open-source edition of CoCo, an AI video creation and editing wo
 - Unified editing workspace: manage preview, assets, script, music, timeline, and export in one interface
 - AI-assisted iteration: continuously refine rhythm, style, structure, and expression through natural-language instructions
 
+### Why OPENCOCO
+
+OPENCOCO is not just a black-box generator that turns one prompt into one short clip. It is an open creative workspace built for ongoing video production: you can mix different model stacks, keep refining with natural language, track versions and project memory, and organize fragmented generations into coherent long-form videos inside one integrated workflow.
+
 ### Official Website & Contact
 
 - Product website: [openyc.vip/products/coco](https://openyc.vip/products/coco)
@@ -124,6 +128,10 @@ OPENCOCO 是 CoCo 的开源版本，一个基于 FastAPI、Next.js 和 Electron 
 - 长视频生成能力：只需简单描述，在 token 充足的情况下即可生成电影时长的视频
 - 一体化工作台：把预览、素材、脚本、音乐、时间线和导出整合到同一个界面
 - AI 辅助迭代：可通过自然语言持续调整节奏、风格、结构和表达方式
+
+### 为什么 OPENCOCO 和普通 AI 视频工具不一样
+
+OPENCOCO 不是一个“输入一句话就吐出一段视频”的黑盒生成器，而是一个面向持续创作的开放式工作台。它支持灵活接入不同模型，通过自然语言不断迭代内容，保留版本和项目记忆，并把碎片化生成结果组织成连贯的长视频，最终在同一个工作流里完成创作、编辑和导出。
 
 ### 官网与联系
 
