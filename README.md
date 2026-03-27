@@ -18,10 +18,10 @@ OPENCOCO is the open-source edition of CoCo, an AI video creation and editing wo
 ### Core Features
 
 - Flexible model configuration: customize script models, image storyboard models, and video generation models
-- Template-based quick start: begin from built-in video templates and avoid configuring every workflow from scratch
+- Support version history, custom prompts, creation logs, and project memory
+- Generate film-length videos from simple descriptions as long as you have enough tokens
 - Unified editing workspace: manage preview, assets, script, music, timeline, and export in one interface
 - AI-assisted iteration: continuously refine rhythm, style, structure, and expression through natural-language instructions
-- Desktop-first experience: combine local project management with an Electron shell and web interface for ongoing creation
 - Official product page: learn more about the commercial product direction and positioning at [openyc.vip/products/coco](https://openyc.vip/products/coco)
 
 ### Official Website & Contact
@@ -117,10 +117,10 @@ OPENCOCO 是 CoCo 的开源版本，一个基于 FastAPI、Next.js 和 Electron 
 ### 核心特点
 
 - 灵活配置模型：你可以自定义脚本模型、图片分镜模型、视频模型
-- 模板快速启动：内置多种常见视频模板，减少从零开始配置的成本
+- 支持版本回溯、自定义提示词、创作日志、项目记忆
+- 简单描述就可以生成电影时长的视频，只要你有足够多的token
 - 一体化工作台：把预览、素材、脚本、音乐、时间线和导出整合到同一个界面
 - AI 辅助迭代：可通过自然语言持续修改节奏、风格、结构和表达方式
-- 桌面优先体验：本地项目管理结合 Electron 外壳与 Web 界面，适合持续创作
 - 产品官网：可在 [openyc.vip/products/coco](https://openyc.vip/products/coco) 查看产品定位与更多介绍
 
 ### 官网与联系
