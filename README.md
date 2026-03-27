@@ -62,14 +62,6 @@ cd backend && .venv/bin/uvicorn main:app --reload
 cd frontend && npm run dev
 ```
 
-
-
-## Environment Files
-
-- [backend/.env.example](backend/.env.example)
-- [frontend/.env.example](frontend/.env.example)
-- [cloudflare-service/.dev.vars.example](cloudflare-service/.dev.vars.example)
-
 ## License
 
 This repository is released under the MIT License. See [LICENSE](LICENSE).
