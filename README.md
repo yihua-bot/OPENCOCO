@@ -22,6 +22,12 @@ OPENCOCO is a desktop-first AI video creation and editing tool designed around n
 - Unified editing workspace: manage assets, preview, script, music, and timeline in one interface
 - AI-assisted iteration: refine speed, structure, tone, and style through conversational editing
 - Desktop workflow: local project management with an Electron shell, web frontend, and FastAPI backend
+- Official product page: learn more about the commercial product direction and positioning at [openyc.vip/products/coco](https://openyc.vip/products/coco)
+
+### Official Website & Contact
+
+- Product website: [openyc.vip/products/coco](https://openyc.vip/products/coco)
+- Contact email: [allensong1019@gmail.com](mailto:allensong1019@gmail.com)
 
 ### Screenshots
 
@@ -115,6 +121,12 @@ OPENCOCO 是 CoCo 的开源版本，一个基于 FastAPI、Next.js 和 Electron 
 - 一体化工作台：把预览、素材、脚本、音乐、时间线和导出整合到同一个界面
 - AI 辅助迭代：可通过自然语言持续修改节奏、风格、结构和表达方式
 - 桌面优先体验：本地项目管理结合 Electron 外壳与 Web 界面，适合持续创作
+- 产品官网：可在 [openyc.vip/products/coco](https://openyc.vip/products/coco) 查看产品定位与更多介绍
+
+### 官网与联系
+
+- 产品官网：[openyc.vip/products/coco](https://openyc.vip/products/coco)
+- 联系邮箱：[allensong1019@gmail.com](mailto:allensong1019@gmail.com)
 
 ### 产品截图
 
