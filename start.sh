@@ -1,7 +1,7 @@
 #!/bin/bash
 # Quick start script for local development
 
-echo "Starting Coco..."
+echo "Starting CoCo..."
 
 # Start postgres + redis
 echo "Starting database and cache..."
@@ -33,7 +33,7 @@ echo ""
 echo "✅ Infrastructure ready!"
 echo ""
 echo "Now run in separate terminals:"
-echo "  Terminal 1 (backend):  cd backend && ../.venv/bin/uvicorn main:app --reload"
+echo "  Terminal 1 (backend):  cd backend && .venv/bin/uvicorn main:app --reload"
 echo "  Terminal 2 (frontend): cd frontend && npm run dev"
 echo ""
 echo "Then open: http://localhost:3000"

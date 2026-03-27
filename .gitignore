@@ -1,16 +1,58 @@
+# Secrets and local env
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+cloudflare-service/.dev.vars
+cloudflare-service/.env
+cloudflare-service/.env.*
+
 # Python
 backend/.venv/
 backend/__pycache__/
 backend/**/__pycache__/
 backend/*.pyc
-backend/.env
-backend/uploads/
+.ruff_cache/
 
-# Node
+# Local data
+backend/uploads/
+electron/uploads/
+uploads/
+logs/
+*.db
+*.sqlite
+*.sqlite3
+
+# Node / frontend / worker
 frontend/node_modules/
 frontend/.next/
-frontend/.env.local
-frontend/.env
+frontend/*.tsbuildinfo
+cloudflare-service/node_modules/
+cloudflare-service/.wrangler/
+
+# Electron
+electron/node_modules/
+electron/dist/
+electron/dist-electron/
+electron/resources/coco-backend/
+electron/resources/coco-backend.exe
+electron/resources/node/
+electron/resources/node.exe
+
+# Build outputs
+build/
+
+# Signing / certificates
+*.pem
+*.key
+*.crt
+*.p12
+*.mobileprovision
+*.provisionprofile
+*.jks
+*.keystore
 
 # General
 .DS_Store

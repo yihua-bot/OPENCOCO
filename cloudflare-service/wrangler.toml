@@ -1,0 +1,25 @@
+name = "coco-auth"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Copy this file and fill in your own deployment values before running `wrangler deploy`.
+# Optional custom domain example:
+# routes = [
+#   { pattern = "auth.yourdomain.com/*", zone_name = "yourdomain.com" }
+# ]
+
+[vars]
+ENVIRONMENT = "production"
+RESEND_FROM_EMAIL = "CoCo <noreply@example.com>"
+RESEND_FALLBACK_FROM_EMAIL = "CoCo <onboarding@resend.dev>"
+
+# Configure your own D1 database before deploy.
+[[d1_databases]]
+binding = "DB"
+database_name = "coco_users"
+database_id = "replace-with-your-d1-database-id"
+
+# Configure your own KV namespace before deploy.
+[[kv_namespaces]]
+binding = "KV"
+id = "replace-with-your-kv-namespace-id"

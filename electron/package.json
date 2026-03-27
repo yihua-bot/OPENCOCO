@@ -1,0 +1,115 @@
+{
+  "name": "coco",
+  "version": "1.0.2",
+  "description": "CoCo — AI Video Editor",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "npm run build && electron dist/main.js",
+    "dev:watch": "tsc --watch",
+    "build": "tsc && npm run copy-preload",
+    "copy-preload": "cp src/preload.js dist/",
+    "dist": "npm run build && electron-builder && npm run copy-logo",
+    "dist:mac": "npm run build && electron-builder --mac && npm run copy-logo",
+    "dist:mas": "npm run build && electron-builder --mac mas && npm run copy-logo",
+    "dist:win": "npm run build && electron-builder --win && npm run copy-logo",
+    "dist:linux": "npm run build && electron-builder --linux && npm run copy-logo",
+    "copy-logo": "cp logo.svg dist-electron/logo.svg 2>/dev/null || true",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "electron": "^31.7.7",
+    "electron-builder": "^24.0.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "typescript": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.coco.app",
+    "productName": "CoCo",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "logo.svg",
+      "src/preload.js"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/coco-backend",
+        "to": "coco-backend",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources/node",
+        "to": "node",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "../frontend/.next/standalone",
+        "to": "frontend"
+      },
+      {
+        "from": "../frontend/.next/static",
+        "to": "frontend/.next/static"
+      },
+      {
+        "from": "../frontend/public",
+        "to": "frontend/public"
+      }
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "category": "public.app-category.video",
+      "icon": "build/icon.icns",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.inherit.plist"
+    },
+    "mas": {
+      "type": "distribution",
+      "category": "public.app-category.video",
+      "icon": "build/icon.icns",
+      "entitlements": "build/entitlements.mas.plist",
+      "entitlementsInherit": "build/entitlements.mas.inherit.plist",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "provisioningProfile": "build/embedded.provisionprofile"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "electron-updater": "^6.8.3"
+  }
+}
