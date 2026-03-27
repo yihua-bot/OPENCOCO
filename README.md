@@ -2,6 +2,10 @@
 
 OPENCOCO is the open-source edition of CoCo: an AI-assisted video editing workspace built with FastAPI, Next.js, and Electron.
 
+> Open AI video creation workspace for turning fragmented model outputs into coherent long-form videos.
+>
+> 开放式 AI 视频创作工作台，把碎片化生成内容组织成连贯长视频。
+
 <p>
   <a href="#english">English</a> |
   <a href="#中文">中文</a>
