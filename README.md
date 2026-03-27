@@ -13,15 +13,15 @@ OPENCOCO is the open-source edition of CoCo: an AI-assisted video editing worksp
 
 ### What It Is
 
-OPENCOCO is a desktop-first AI video creation and editing tool designed around natural-language workflows. Instead of moving through a complicated timeline-first pipeline, you describe the video in chat, refine it with prompts, and iterate inside a visual workspace.
+OPENCOCO is the open-source edition of CoCo, an AI video creation and editing workspace built with FastAPI, Next.js, and Electron. It is an open AI video generation platform that can flexibly connect to almost any model stack and combine fragmented generated content into coherent long-form videos.
 
 ### Core Features
 
-- Chat-first creation: describe an idea in plain language and turn it into a video workflow
-- Template-based quick start: begin from common formats such as cinematic shorts, commercials, explainers, music videos, and talking-head content
-- Unified editing workspace: manage assets, preview, script, music, and timeline in one interface
-- AI-assisted iteration: refine speed, structure, tone, and style through conversational editing
-- Desktop workflow: local project management with an Electron shell, web frontend, and FastAPI backend
+- Flexible model configuration: customize script models, image storyboard models, and video generation models
+- Template-based quick start: begin from built-in video templates and avoid configuring every workflow from scratch
+- Unified editing workspace: manage preview, assets, script, music, timeline, and export in one interface
+- AI-assisted iteration: continuously refine rhythm, style, structure, and expression through natural-language instructions
+- Desktop-first experience: combine local project management with an Electron shell and web interface for ongoing creation
 - Official product page: learn more about the commercial product direction and positioning at [openyc.vip/products/coco](https://openyc.vip/products/coco)
 
 ### Official Website & Contact
@@ -112,11 +112,11 @@ cd frontend && npm run dev
 
 ### 产品介绍
 
-OPENCOCO 是 CoCo 的开源版本，一个基于 FastAPI、Next.js 和 Electron 构建的 AI 视频创作与编辑工作台。它强调“对话式创作”而不是传统的复杂时间线流程，让用户先用自然语言描述，再在可视化界面里持续迭代。
+OPENCOCO 是 CoCo 的开源版本，一个基于 FastAPI、Next.js 和 Electron 构建的 AI 视频创作与编辑工作台。他是一个开放式的AI生成视频的平台，可以灵活的几乎所有模型，可以把碎片化的生成内容组合成连贯的长视频。
 
 ### 核心特点
 
-- 对话式创作：像聊天一样描述视频需求，快速进入创作流程
+- 灵活配置模型：你可以自定义脚本模型、图片分镜模型、视频模型
 - 模板快速启动：内置多种常见视频模板，减少从零开始配置的成本
 - 一体化工作台：把预览、素材、脚本、音乐、时间线和导出整合到同一个界面
 - AI 辅助迭代：可通过自然语言持续修改节奏、风格、结构和表达方式
