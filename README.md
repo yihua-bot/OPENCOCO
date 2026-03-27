@@ -1,6 +1,6 @@
-# CoCo
+# OPENCOCO
 
-CoCo is an AI-assisted video editing workspace with a FastAPI backend, a Next.js frontend, and an Electron desktop shell. This repository is prepared for public development: local secrets, databases, logs, and build outputs are excluded from Git, and example environment files are included for each service.
+OPENCOCO is the open-source edition of CoCo: an AI-assisted video editing workspace built with a FastAPI backend, a Next.js frontend, and an Electron desktop shell. This repository is prepared for public development: local secrets, databases, logs, and build outputs are excluded from Git, and example environment files are included for each service.
 
 ## Repository Layout
 
@@ -10,6 +10,12 @@ CoCo is an AI-assisted video editing workspace with a FastAPI backend, a Next.js
 - `cloudflare-service/`: optional email-code auth service for Cloudflare Workers
 - `cloud-service/`: optional lightweight cloud auth service
 - `license-server/`: optional licensing helper scripts and worker
+
+## Downloads
+
+- Source code: available immediately from this repository via `git clone` or GitHub's `Download ZIP`
+- Desktop application builds: available from GitHub Releases when maintainers publish tagged releases
+- If the Releases page has no binaries yet, build locally by following the setup steps below
 
 ## Quick Start
 
@@ -65,6 +71,7 @@ cd frontend && npm run dev
 - `cloud-service/`, `cloudflare-service/`, and `license-server/` are optional. If you do not want to publish those parts, split them into private repositories before pushing to GitHub.
 - Electron auto-update is disabled by default unless `GITHUB_RELEASE_OWNER` and `GITHUB_RELEASE_REPO` are configured in the runtime environment.
 - Cloud auth is optional. If `CLOUD_AUTH_URL` or `NEXT_PUBLIC_CLOUD_AUTH_URL` is unset, the app falls back to local behavior.
+- Maintainer-facing GitHub setup and first-release notes live in [docs/GITHUB_SETUP.md](docs/GITHUB_SETUP.md).
 
 ## Environment Files
 
