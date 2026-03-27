@@ -35,7 +35,6 @@ cd ../electron && npm install
 ```bash
 cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env.local
-cp cloudflare-service/.dev.vars.example cloudflare-service/.dev.vars
 ```
 
 Fill in only the variables you need. For a local-only setup, most optional cloud and payment variables can stay empty.
